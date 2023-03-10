@@ -1,18 +1,18 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <button
     *ngIf="!searchBox"
     mat-icon-button
     type="button"
-    (click)="toggleSearchBox()"
+    (click)="showSearchBox()"
   >
     <mat-icon>search</mat-icon>
   </button>
   <mat-form-field *ngIf="searchBox"
-    ><input matInput /><button
+    ><input matInput formControlName="searchTerm" /><button
       matSuffix
       mat-icon-button
       type="button"
-      (click)="toggleSearchBox()"
+      (click)="hideSearchBox()"
     >
       <mat-icon>close</mat-icon>
     </button></mat-form-field
