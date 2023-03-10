@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+import { SearchComponent } from './search/search.component';
+
 @Component({
+  imports: [CommonModule, SearchComponent],
   selector: 'app-root',
+  standalone: true,
+  styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'wikipedia-viewer';

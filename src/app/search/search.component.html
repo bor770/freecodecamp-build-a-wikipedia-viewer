@@ -1,0 +1,20 @@
+<form>
+  <button
+    *ngIf="!searchBox"
+    mat-icon-button
+    type="button"
+    (click)="toggleSearchBox()"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-form-field *ngIf="searchBox"
+    ><input matInput /><button
+      matSuffix
+      mat-icon-button
+      type="button"
+      (click)="toggleSearchBox()"
+    >
+      <mat-icon>close</mat-icon>
+    </button></mat-form-field
+  >
+</form>
