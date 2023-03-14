@@ -1,1 +1,3 @@
-export type Results = { snippet: string; title: string }[];
+export type Results = {
+  query: { search: { snippet: string; title: string }[] };
+};

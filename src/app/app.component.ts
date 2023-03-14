@@ -11,6 +11,4 @@ import { SearchComponent } from './search/search.component';
   styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  title = 'wikipedia-viewer';
-}
+export class AppComponent {}

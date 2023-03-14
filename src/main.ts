@@ -1,4 +1,3 @@
-import { isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import {
@@ -6,7 +5,7 @@ import {
   provideRouter,
   withPreloading,
 } from '@angular/router';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideStore } from '@ngrx/store';
 
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app-routing';
@@ -15,6 +14,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideStoreDevtools({ logOnly: !isDevMode() }),
+    provideStore(),
   ],
 });

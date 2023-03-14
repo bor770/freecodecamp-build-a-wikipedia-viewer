@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [
@@ -34,6 +35,8 @@ export class SearchComponent {
   }
 
   onSubmit() {
-    console.log(this.form);
+    this.router.navigate([this.form.value.searchTerm]);
   }
+
+  constructor(private router: Router) {}
 }
