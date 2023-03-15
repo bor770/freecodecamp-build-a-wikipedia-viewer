@@ -1,4 +1,4 @@
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { Results } from '../results.model';
 import * as ResultsActions from './results.actions';

@@ -5,7 +5,7 @@ import { getRouterSelectors } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs';
 
-import { Results } from '../results.model';
+import { QueryResponse } from '../results.model';
 import * as ResultsActions from './results.actions';
 
 @Injectable()
@@ -18,10 +18,14 @@ export class ResultsEffects {
       ),
       switchMap(([fetchResultsAction, term]) =>
         this.http
-          .get<Results>(
-            `https://www.mediawiki.org/w/api.php?action=query&format=json&list=search&origin=*&srsearch=${term}`
+          .get<QueryResponse>(
+            `https://en.wikipedia.org/w/api.php?action=query&format=json&exintro&exlimit=max&explaintext&generator=search&gsrsearch=${term}&origin=*&prop=extracts`
           )
-          .pipe(map((results) => new ResultsActions.SetResults(results)))
+          .pipe(
+            map(
+              (response) => new ResultsActions.SetResults(response.query.pages)
+            )
+          )
       )
     )
   );
