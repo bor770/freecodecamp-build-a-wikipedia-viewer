@@ -1,20 +1,32 @@
-<form [formGroup]="form" (submit)="onSubmit()">
-  <button
-    *ngIf="!searchBox"
-    mat-icon-button
-    type="button"
-    (click)="showSearchBox()"
-  >
-    <mat-icon>search</mat-icon>
-  </button>
-  <mat-form-field *ngIf="searchBox"
-    ><input matInput formControlName="searchTerm" /><button
-      matSuffix
-      mat-icon-button
-      type="button"
-      (click)="hideSearchBox()"
+<header>
+  <nav>
+    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
+      >Click here for a random article</a
     >
-      <mat-icon>close</mat-icon>
-    </button></mat-form-field
-  >
-</form>
+  </nav>
+</header>
+<main>
+  <ng-container *ngIf="!searchBox"
+    ><button
+      mat-icon-button
+      class="search-button"
+      type="button"
+      (click)="showSearchBox()"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+    <p>Click icon to search</p>
+  </ng-container>
+  <form *ngIf="searchBox" [formGroup]="form" (submit)="onSubmit()">
+    <mat-form-field
+      ><input matInput formControlName="searchTerm" /><button
+        matSuffix
+        mat-icon-button
+        type="button"
+        (click)="hideSearchBox()"
+      >
+        <mat-icon>close</mat-icon>
+      </button></mat-form-field
+    >
+  </form>
+</main>

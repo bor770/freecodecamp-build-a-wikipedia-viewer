@@ -16,9 +16,6 @@ html {
 }
 
 body {
-  align-items: center;
   color: var(--color);
-  display: flex;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  justify-content: center;
 }

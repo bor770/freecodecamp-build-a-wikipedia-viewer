@@ -1,4 +1,21 @@
 :host {
-  display: block;
-  height: 3rem;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color);
+  font: inherit;
+  text-decoration: none;
+}
+
+main {
+  height: 4.875rem;
+}
+
+.search-button {
+  margin-bottom: 1rem;
 }
