@@ -1,0 +1,11 @@
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.55rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

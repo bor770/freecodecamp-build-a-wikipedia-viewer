@@ -1,1 +1,15 @@
-<p>search-box works!</p>
+<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
+  >Click here for a random article</a
+>
+<mat-form-field *ngIf="open">
+  <mat-label>Search Wikipedia</mat-label>
+  <input matInput /><button matSuffix mat-icon-button (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button></mat-form-field
+>
+<ng-container *ngIf="!open"
+  ><button mat-icon-button (click)="onOpen()">
+    <mat-icon>search</mat-icon>
+  </button>
+  <p>Click icon to search</p>
+</ng-container>
