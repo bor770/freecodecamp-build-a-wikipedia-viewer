@@ -1,1 +1,23 @@
-<!-- <ng-container *ngIf="results$ | async as results"></ng-container> -->
+<ng-container *ngIf="results$ | async as results">
+  <header>
+    <nav>
+      <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
+        >Click here for a random article</a
+      >
+    </nav>
+  </header>
+  <main>
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <mat-form-field
+        ><input matInput formControlName="searchTerm" /><button
+          matSuffix
+          mat-icon-button
+          type="button"
+          (click)="close()"
+        >
+          <mat-icon>close</mat-icon>
+        </button></mat-form-field
+      >
+    </form>
+  </main>
+</ng-container>
