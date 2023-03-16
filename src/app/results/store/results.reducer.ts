@@ -1,9 +1,9 @@
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { Results } from '../results.model';
 import * as ResultsActions from './results.actions';
 
-export interface ResultsState extends Results {}
+export type ResultsState = Results;
 
 const initialState: ResultsState = null;
 
@@ -13,7 +13,7 @@ export function resultsReducer(
 ) {
   switch (action.type) {
     case ResultsActions.SET_RESULTS:
-      return { ...state, ...JSON.parse(JSON.stringify(action.payload)) };
+      return JSON.parse(JSON.stringify(action.payload));
     default:
       return state;
   }

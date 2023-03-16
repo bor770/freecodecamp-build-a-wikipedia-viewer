@@ -2,4 +2,19 @@
   *ngIf="{ results: results$ | async, term: term$ | async } as observables"
 >
   <app-search value="{{ observables.term }}"></app-search>
+  <ul>
+    <li *ngFor="let result of observables.results">
+      <a
+        href="{{ 'https://en.wikipedia.org/?curid=' + result.pageid }}"
+        target="_blank"
+      >
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ result.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>{{ result.extract }}</mat-card-content>
+        </mat-card>
+      </a>
+    </li>
+  </ul>
 </ng-container>

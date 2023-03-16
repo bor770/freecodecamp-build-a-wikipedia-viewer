@@ -18,4 +18,5 @@ html {
 body {
   color: var(--color);
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 1.875rem;
 }

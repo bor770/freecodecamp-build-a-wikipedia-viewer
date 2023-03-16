@@ -24,7 +24,9 @@ export class ResultsEffects {
           .pipe(
             map((response) =>
               response.query
-                ? new ResultsActions.SetResults(response.query.pages)
+                ? new ResultsActions.SetResults(
+                    Object.values(response.query.pages)
+                  )
                 : { type: `DUMMY` }
             )
           )

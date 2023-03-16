@@ -1,0 +1,17 @@
+ul {
+  list-style: none;
+}
+
+li {
+  border-left: 0.312rem solid transparent;
+  margin-bottom: 0.625rem;
+}
+
+li:hover {
+  border-left-color: orange;
+}
+
+a {
+  color: var(--color);
+  text-decoration: none;
+}
