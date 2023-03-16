@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
-import { getRouterSelectors } from '@ngrx/router-store';
+import { getRouterSelectors, ROUTER_NAVIGATED } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs';
 
@@ -12,18 +12,20 @@ import * as ResultsActions from './results.actions';
 export class ResultsEffects {
   fetchResults = createEffect(() =>
     this.actions$.pipe(
-      ofType(ResultsActions.FETCH_RESULTS),
+      ofType(ROUTER_NAVIGATED),
       concatLatestFrom(() =>
         this.store.select(getRouterSelectors().selectRouteParam(`term`))
       ),
-      switchMap(([fetchResultsAction, term]) =>
+      switchMap(([, term]) =>
         this.http
           .get<QueryResponse>(
             `https://en.wikipedia.org/w/api.php?action=query&format=json&exintro&exlimit=max&explaintext&generator=search&gsrsearch=${term}&origin=*&prop=extracts`
           )
           .pipe(
-            map(
-              (response) => new ResultsActions.SetResults(response.query.pages)
+            map((response) =>
+              response.query
+                ? new ResultsActions.SetResults(response.query.pages)
+                : { type: `DUMMY` }
             )
           )
       )

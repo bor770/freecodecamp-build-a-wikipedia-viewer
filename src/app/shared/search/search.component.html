@@ -3,12 +3,16 @@
 >
 <mat-form-field *ngIf="open">
   <mat-label>Search Wikipedia</mat-label>
-  <input matInput /><button matSuffix mat-icon-button (click)="onClose()">
+  <input matInput value="{{ value }}" (keyup)="onSearch($event)" /><button
+    matSuffix
+    mat-icon-button
+    (click)="onToggle()"
+  >
     <mat-icon>close</mat-icon>
   </button></mat-form-field
 >
 <ng-container *ngIf="!open"
-  ><button mat-icon-button (click)="onOpen()">
+  ><button mat-icon-button (click)="onToggle()">
     <mat-icon>search</mat-icon>
   </button>
   <p>Click icon to search</p>
