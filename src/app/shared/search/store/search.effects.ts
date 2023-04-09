@@ -9,12 +9,12 @@ import * as SearchActions from './search.actions';
 export class SearchEffects {
   search = createEffect(
     () =>
-      this.actions$.pipe(
+      { return this.actions$.pipe(
         ofType(SearchActions.SEARCH),
         tap((searchAction) => {
           this.router.navigate([searchAction.payload]);
         })
-      ),
+      ) },
     { dispatch: false }
   );
 

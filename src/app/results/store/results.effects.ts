@@ -10,8 +10,8 @@ import * as ResultsActions from './results.actions';
 
 @Injectable()
 export class ResultsEffects {
-  fetchResults = createEffect(() =>
-    this.actions$.pipe(
+  fetchResults = createEffect(() => {
+    return this.actions$.pipe(
       ofType(ROUTER_NAVIGATED),
       concatLatestFrom(() =>
         this.store.select(getRouterSelectors().selectRouteParam(`term`))
@@ -31,8 +31,8 @@ export class ResultsEffects {
             )
           )
       )
-    )
-  );
+    );
+  });
 
   constructor(
     private actions$: Actions<ResultsActions.ResultsActions>,

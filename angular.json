@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wikipedia-viewer": {
+    "build-a-wikipedia-viewer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wikipedia-viewer",
+            "outputPath": "dist/build-a-wikipedia-viewer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -86,10 +86,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "wikipedia-viewer:build:production"
+              "browserTarget": "build-a-wikipedia-viewer:build:production"
             },
             "development": {
-              "browserTarget": "wikipedia-viewer:build:development"
+              "browserTarget": "build-a-wikipedia-viewer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,7 +97,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wikipedia-viewer:build"
+            "browserTarget": "build-a-wikipedia-viewer:build"
           }
         },
         "test": {
