@@ -8,18 +8,16 @@ import * as SearchActions from './search.actions';
 @Injectable()
 export class SearchEffects {
   search = createEffect(
-    () =>
-      { return this.actions$.pipe(
-        ofType(SearchActions.SEARCH),
+    () => {
+      return this.actions$.pipe(
+        ofType(SearchActions.search),
         tap((searchAction) => {
-          this.router.navigate([searchAction.payload]);
+          this.router.navigate([searchAction.searchTerm]);
         })
-      ) },
+      );
+    },
     { dispatch: false }
   );
 
-  constructor(
-    private actions$: Actions<SearchActions.SearchActions>,
-    private router: Router
-  ) {}
+  constructor(private actions$: Actions, private router: Router) {}
 }

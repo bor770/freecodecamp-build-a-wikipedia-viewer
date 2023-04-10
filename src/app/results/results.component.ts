@@ -24,7 +24,7 @@ export class ResultsComponent implements OnInit {
     this.term$ = this.store.select(
       getRouterSelectors().selectRouteParam(`term`)
     );
-    this.results$ = this.store.select(fromResults.getResultsState);
+    this.results$ = this.store.select(fromResults.selectResultsState);
   }
 
   constructor(private store: Store) {}

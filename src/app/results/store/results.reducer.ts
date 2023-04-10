@@ -7,18 +7,6 @@ export type ResultsState = Results;
 
 const initialState: ResultsState = null;
 
-// export function resultsReducer(
-//   state = initialState,
-//   action: ResultsActions.ResultsActions
-// ) {
-//   switch (action.type) {
-//     case ResultsActions.setResults.type:
-//       return JSON.parse(JSON.stringify(action.res));
-//     default:
-//       return state;
-//   }
-// }
-
 export const resultsReducer = createReducer(
   initialState,
   on(
@@ -27,4 +15,4 @@ export const resultsReducer = createReducer(
   )
 );
 
-export const getResultsState = createFeatureSelector<ResultsState>(`results`);
+export const selectResultsState = createFeatureSelector<ResultsState>(`results`);

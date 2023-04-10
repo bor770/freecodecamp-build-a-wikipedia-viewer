@@ -32,7 +32,9 @@ export class SearchComponent implements OnInit {
   onSearch(event: KeyboardEvent) {
     if (event.key === `Enter`) {
       this.store.dispatch(
-        new SearchActions.Search((<HTMLInputElement>event.target).value)
+        SearchActions.search({
+          searchTerm: (<HTMLInputElement>event.target).value,
+        })
       );
     }
   }
