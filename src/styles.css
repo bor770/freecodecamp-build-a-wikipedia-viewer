@@ -12,11 +12,12 @@ body {
 }
 
 html {
-  --color: #333;
+  --blue: #092b40;
 }
 
 body {
-  color: var(--color);
+  background-color: var(--blue);
+  color: white;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   padding: 1.875rem;
 }
