@@ -24,9 +24,9 @@ export class ResultsEffects {
           .pipe(
             map((response) =>
               response.query
-                ? new ResultsActions.SetResults(
-                    Object.values(response.query.pages)
-                  )
+                ? ResultsActions.setResults({
+                    results: Object.values(response.query.pages),
+                  })
                 : { type: `DUMMY` }
             )
           )
@@ -35,7 +35,7 @@ export class ResultsEffects {
   });
 
   constructor(
-    private actions$: Actions<ResultsActions.ResultsActions>,
+    private actions$: Actions,
     private http: HttpClient,
     private store: Store
   ) {}
