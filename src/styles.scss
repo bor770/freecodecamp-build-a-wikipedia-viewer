@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$my-orange-palette: (
+  50: #fdf2e3,
+  100: #fadeb9,
+  200: #f7c98d,
+  300: #f4b364,
+  400: #f1a34a,
+  500: #ed953c,
+  600: #e88b39,
+  700: #e17d35,
+  800: #d96f32,
+  900: #cc5b2f,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+    800: black,
+    900: white,
+  ),
+);
+
+$my-orange: mat.define-palette($my-orange-palette, 800);
+
+$my-custom-typography-config: mat.define-typography-config(
+  $body-1:
+    mat.define-typography-level(
+      $font-size: 1rem,
+      $font-family: Arial,
+    ),
+);
+
+$my-orange-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-orange,
+      accent: $my-orange,
+    ),
+    typography: $my-custom-typography-config,
+  )
+);
+
+@include mat.core-theme($my-orange-theme);
+@include mat.form-field-theme($my-orange-theme);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  --color-blue: #092b40;
+  --color-gray: #e7e7e8;
+  --color-orange: #d96f32;
+}
+
+body {
+  background-color: var(--color-blue);
+  font-family: "Lucida Sans Unicode", Roboto, "Helvetica Neue", sans-serif;
+  padding-inline: 10%;
+}

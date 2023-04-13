@@ -1,12 +1,17 @@
 :host {
   align-items: center;
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: 1.55rem;
   height: 8.5rem;
+  justify-content: space-between;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.orange {
+  color: var(--color-orange);
 }

@@ -1,9 +1,10 @@
 <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
   >Click here for a random article</a
 >
-<mat-form-field *ngIf="open">
+<mat-form-field *ngIf="open" appearance="outline">
   <mat-label>Search Wikipedia</mat-label>
-  <input matInput value="{{ value }}" (keyup)="onSearch($event)" /><button
+  <input class="orange" matInput value="{{ value }}" (keyup)="onSearch($event)" /><button
+    class="orange"
     matSuffix
     mat-icon-button
     (click)="onToggle()"
@@ -12,7 +13,7 @@
   </button></mat-form-field
 >
 <ng-container *ngIf="!open"
-  ><button mat-icon-button (click)="onToggle()">
+  ><button class="orange" mat-icon-button (click)="onToggle()">
     <mat-icon>search</mat-icon>
   </button>
   <p>Click icon to search</p>

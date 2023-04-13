@@ -1,17 +1,22 @@
 ul {
   list-style: none;
+  margin-block: 1rem;
 }
 
 li {
-  border-left: 0.312rem solid transparent;
   margin-bottom: 0.625rem;
 }
 
-li:hover {
-  border-left-color: orange;
+a {
+  color: black;
+  text-decoration: none;
 }
 
-a {
-  color: var(--color);
-  text-decoration: none;
+.mat-card {
+  background-color: var(--color-gray);
+  border-left: 0.312rem solid transparent;
+}
+
+.mat-card:hover {
+  border-left-color: var(--color-orange);
 }
