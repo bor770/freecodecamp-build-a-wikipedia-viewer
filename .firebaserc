@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "build-a-wikipedia-viewer": {
+      "hosting": {
+        "build-a-wikipedia-viewer": [
+          "build-a-wikipedia-viewer"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "build-a-wikipedia-viewer"
+  }
+}

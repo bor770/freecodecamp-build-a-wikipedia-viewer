@@ -127,6 +127,16 @@
               "src/**/*.html"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "build-a-wikipedia-viewer:build:production",
+            "firebaseProject": "build-a-wikipedia-viewer",
+            "firebaseHostingSite": "build-a-wikipedia-viewer"
+          }
         }
       }
     }
